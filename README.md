@@ -27,3 +27,19 @@ From 1517 sample of temperatures in the month of December we get:
 ## Summary
 
 This firs thing to consider is that our samples are not the same lenght, this could have affected the results. Working and analyzing the data, the conclusion is the two months are not very different. Therefore we can say YES the surf and ice cream shop business is sustainbale year-roud.
+
+
+I would rather, try to get more infomation about the temperature of the other months. 
+```
+Cahning the number of the month
+temp = session.query(Measurement).filter(extract('month', Measurement.date) == 1).all()
+list_temp = [temp.tobs for temp in temp_dec]
+list_temp_df = pd.DataFrame(list_temp, columns=["Temperature"])
+```
+Also adding a graph would also help
+
+```
+list_temp_df.plot()
+
+````
+
